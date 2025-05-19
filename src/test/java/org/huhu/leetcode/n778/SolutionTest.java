@@ -28,4 +28,10 @@ abstract class SolutionTest {
         assertEquals(16, solution.swimInWater(grid));
     }
 
+    @Test
+    void test_3() {
+        int[][] grid = { { 11, 15, 3, 2 }, { 6, 4, 0, 13 }, { 5, 8, 9, 10 }, { 1, 14, 12, 7 } };
+        assertEquals(11, solution.swimInWater(grid));
+    }
+
 }
