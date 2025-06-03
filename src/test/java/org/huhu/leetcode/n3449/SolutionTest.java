@@ -28,4 +28,10 @@ abstract class SolutionTest {
         assertEquals(2, solution.maxScore(points, 5));
     }
 
+    @Test
+    void test_3() {
+        int[] points = { 1, 8 };
+        assertEquals(5, solution.maxScore(points, 10));
+    }
+
 }
