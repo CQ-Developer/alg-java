@@ -1,25 +1,25 @@
 {
     "name": "alg-java",
-    "image": "mcr.microsoft.com/devcontainers/java:21",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
         "ghcr.io/devcontainers/features/java:1": {
-            "version": "none",
+            "version": "21",
             "jdkDistro": "open",
             "installMaven": true
         },
         "ghcr.io/devcontainers/features/common-utils:2": {
             "upgradlePackages": true,
+            "installZsh": false,
             "installOhMyZsh": false,
-            "installOhMyZshConfig": false,
-            "installZsh": false
+            "installOhMyZshConfig": false
         }
     },
     "customizations": {
         "vscode": {
             "settings": {
+                "redhat.telemetry.enabled": false,
                 "java.configuration.updateBuildConfiguration": "automatic",
-                "java.project.explorer.showNonJavaResources": false,
-                "redhat.telemetry.enabled": false
+                "java.project.explorer.showNonJavaResources": false
             }
         }
     }
