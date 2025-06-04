@@ -1,41 +1,40 @@
 package org.huhu.leetcode.n3449;
 
-import java.util.Arrays;
-
 class SolutionA implements Solution {
 
     @Override
     public long maxScore(int[] points, int m) {
-        long l = 0, r = 0;
-        for (int point : points) {
-            r += point;
+        int n = points.length, mn = points[0];
+        for (int i = 1; i < n; i++) {
+            mn = Math.min(mn, points[i]);
         }
-        while (l <= r) {
+        long l = 0, r = (m + 1) / 2L * mn + 1;
+        while (l + 1 < r) {
             long mid = l + (r - l) / 2;
-            if (check(points, m, mid)) {
-                l = mid + 1;
+            if (check(points, n, m, mid)) {
+                l = mid;
             } else {
-                r = mid - 1;
+                r = mid;
             }
         }
-        return r;
+        return l;
     }
 
-    private boolean check(int[] points, int m, long min) {
-        int n = points.length;
-        int[] scores = new int[n];
-        scores[0] = points[0];
-        for (int i = 0, cnt = 1; cnt < m; cnt++) {
-            if (i > 0 && scores[i - 1] < min || i == n - 1) {
-                i--;
-            } else {
-                i++;
+    private boolean check(int[] points, int n, int m, long low) {
+        int rest = m;
+        for (int pre = 0, i = 0; i < n; i++) {
+            int k = (int) ((low - 1) / points[i] + 1) - pre;
+            if (i == n - 1 && k <= 0) {
+                break;
             }
-            scores[i] += points[i];
+            k = Math.max(k, 1);
+            rest -= 2 * k - 1;
+            if (rest < 0) {
+                return false;
+            }
+            pre = k - 1;
         }
-        // 超时
-        Arrays.sort(scores);
-        return scores[0] >= min;
+        return true;
     }
 
 }
