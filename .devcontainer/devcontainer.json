@@ -5,22 +5,14 @@
         "ghcr.io/devcontainers/features/java:1": {
             "version": "21",
             "jdkDistro": "open",
-            "installMaven": true
+            "installMaven": true,
+            "mavenVersion": "3.9.10"
         },
         "ghcr.io/devcontainers/features/common-utils:2": {
             "upgradlePackages": true,
             "installZsh": false,
             "installOhMyZsh": false,
             "installOhMyZshConfig": false
-        }
-    },
-    "customizations": {
-        "vscode": {
-            "settings": {
-                "redhat.telemetry.enabled": false,
-                "java.configuration.updateBuildConfiguration": "automatic",
-                "java.project.explorer.showNonJavaResources": false
-            }
         }
     }
 }
