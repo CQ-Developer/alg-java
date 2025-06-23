@@ -26,4 +26,9 @@ abstract class SolutionTest {
         assertEquals(12, solution.findKthSmallest(new int[] { 5, 2 }, 7));
     }
 
+    @Test
+    void test3() {
+        assertEquals(35, solution.findKthSmallest(new int[] { 5 }, 7));
+    }
+
 }
