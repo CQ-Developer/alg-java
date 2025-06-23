@@ -1,10 +1,21 @@
 package org.huhu.leetcode.n3116;
 
+import java.util.Arrays;
+
 class SolutionB implements Solution {
 
     @Override
     public long findKthSmallest(int[] coins, int k) {
-        int n = coins.length;
+        Arrays.sort(coins);
+        int n = 1;
+        to: for (int coin : coins) {
+            for (int i = 0; i < n; i++) {
+                if (coin % coins[i] == 0) {
+                    continue to;
+                }
+            }
+            coins[n++] = coin;
+        }
         long[] subset = new long[1 << n];
         subset[0] = 1;
         for (int i = 0; i < n; i++) {
