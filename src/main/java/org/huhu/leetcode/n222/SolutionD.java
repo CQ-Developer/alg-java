@@ -8,15 +8,13 @@ class SolutionD implements Solution {
             return 0;
         }
         int h = 0;
-        var node = root;
-        while (node.left != null) {
+        for (var node = root.left; node != null; node = node.left) {
             h++;
-            node = node.left;
         }
         int l = (1 << h), r = 1 << (h + 1);
         while (l + 1 < r) {
             int mid = l + (r - l) / 2;
-            if (check(root, 1 << (h - 1), mid)) {
+            if (check(root, 1 << (h - 1), mid) != null) {
                 l = mid;
             } else {
                 r = mid;
@@ -25,7 +23,7 @@ class SolutionD implements Solution {
         return l;
     }
 
-    private boolean check(TreeNode root, int b, int k) {
+    private TreeNode check(TreeNode root, int b, int k) {
         var node = root;
         while (node != null && b > 0) {
             if ((b & k) == 0) {
@@ -35,7 +33,7 @@ class SolutionD implements Solution {
             }
             b >>= 1;
         }
-        return node != null;
+        return node;
     }
 
 }
