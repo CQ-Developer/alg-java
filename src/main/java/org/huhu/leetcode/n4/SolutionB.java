@@ -20,7 +20,7 @@ class SolutionB implements Solution {
             nums[k++] = nums2[j++];
         }
         int p = (m + n) / 2;
-        return (m + n) % 2 == 0 ? (nums[p - 1] + nums[p]) / 2.0 : nums[p];
+        return (m + n) % 2 == 0 ? (nums[p - 1] + nums[p]) * 0.5 : nums[p];
     }
 
 }

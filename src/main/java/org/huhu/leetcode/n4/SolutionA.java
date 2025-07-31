@@ -12,10 +12,7 @@ class SolutionA implements Solution {
         System.arraycopy(nums2, 0, nums, m, n);
         Arrays.sort(nums);
         int i = (m + n) / 2;
-        if ((m + n) % 2 == 0) {
-            return (nums[i] + nums[i - 1]) / 2.0;
-        }
-        return nums[i];
+        return (m + n) % 2 == 0 ? (nums[i] + nums[i - 1]) * 0.5 : nums[i];
     }
 
 }
