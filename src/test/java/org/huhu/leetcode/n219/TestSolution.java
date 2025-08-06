@@ -34,4 +34,22 @@ abstract class TestSolution {
         assertThat(solution.containsNearbyDuplicate(nums, 2)).isFalse();
     }
 
+    @Test
+    void test4() {
+        int[] nums = {1};
+        assertThat(solution.containsNearbyDuplicate(nums, 1)).isFalse();
+    }
+
+    @Test
+    void test5() {
+        int[] nums = {1, 2, 1};
+        assertThat(solution.containsNearbyDuplicate(nums, 0)).isFalse();
+    }
+
+    @Test
+    void test6() {
+        int[] nums = {0, 1, 2, 3, 2, 5};
+        assertThat(solution.containsNearbyDuplicate(nums, 3)).isTrue();
+    }
+
 }
