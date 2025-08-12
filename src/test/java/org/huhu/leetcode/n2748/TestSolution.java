@@ -8,6 +8,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 abstract class TestSolution {
 
@@ -28,8 +29,8 @@ abstract class TestSolution {
 
     static Stream<Arguments> gen() {
         return Stream.of(
-                Arguments.arguments(new int[]{2, 5, 1, 4}, 5),
-                Arguments.arguments(new int[]{11, 21, 12}, 2));
+                arguments(new int[]{2, 5, 1, 4}, 5),
+                arguments(new int[]{11, 21, 12}, 2));
     }
 
 }
