@@ -10,5 +10,3 @@
     "java.project.explorer.showNonJavaResources": true
 }
 ```
-
-
