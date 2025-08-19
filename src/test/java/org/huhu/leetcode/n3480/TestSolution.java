@@ -30,7 +30,7 @@ abstract class TestSolution {
     static Stream<Arguments> gen() {
         return Stream.of(
                 arguments(4, new int[][] { { 2, 3 }, { 1, 4 } }, 9),
-                arguments(12, new int[][] { { 1, 2 }, { 2, 5 }, { 3, 5 } }, 12));
+                arguments(5, new int[][] { { 1, 2 }, { 2, 5 }, { 3, 5 } }, 12));
     }
 
 }
