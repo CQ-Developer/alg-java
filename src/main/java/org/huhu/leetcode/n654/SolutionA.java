@@ -8,12 +8,15 @@ class SolutionA implements Solution {
     }
 
     private TreeNode build(int[] nums, int l, int r) {
+        if (l == r) {
+            return new TreeNode(nums[l]);
+        }
         if (l > r) {
             return null;
         }
         int i = l;
         for (int j = l; j <= r; j++) {
-            if (nums[j] > nums[i]) {
+            if (nums[i] < nums[j]) {
                 i = j;
             }
         }
