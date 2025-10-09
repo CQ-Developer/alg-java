@@ -7,7 +7,7 @@ class SolutionA implements Solution {
 
     @Override
     public long numberOfSubarrays(int[] nums) {
-        int cnt = nums.length;
+        long cnt = nums.length;
         Deque<int[]> stack = new ArrayDeque<>();
         stack.push(new int[] { Integer.MAX_VALUE, 0 });
         for (int num : nums) {
