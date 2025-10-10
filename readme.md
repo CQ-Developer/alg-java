@@ -32,6 +32,11 @@
             "installOhMyZsh": false,
             "installOhMyZshConfig": false
         }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [ "catppuccin.catppuccin-vsc-pack" ]
+        }
     }
 }
 ```
