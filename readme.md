@@ -12,3 +12,26 @@
     "maven.view": "hierarchical"
 }
 ```
+
+## devcontainer config
+
+```json
+{
+    "name": "alg-java",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "21",
+            "jdkDistro": "open",
+            "installMaven": true,
+            "mavenVersion": "3.9.10"
+        },
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "upgradlePackages": true,
+            "installZsh": false,
+            "installOhMyZsh": false,
+            "installOhMyZshConfig": false
+        }
+    }
+}
+```

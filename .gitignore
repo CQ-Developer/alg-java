@@ -1,8 +1,4 @@
-# idea
 .idea/
-
-# vscode
 .vscode/
-
-# java
+.devcontainer/
 target/
