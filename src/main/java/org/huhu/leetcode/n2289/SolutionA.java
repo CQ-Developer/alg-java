@@ -3,6 +3,9 @@ package org.huhu.leetcode.n2289;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+/**
+ * 单调栈(从左向右)
+ */
 class SolutionA implements Solution {
 
     @Override
