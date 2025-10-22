@@ -11,15 +11,15 @@ class SolutionA implements Solution {
         int n = nums.length;
         int[] ans = new int[n - k + 1];
         for (int j = 0, i = 0; i < n; i++) {
-            if (!deque.isEmpty() && deque.peekLast() < i - k + 1) {
+            while (!deque.isEmpty() && nums[i] > nums[deque.peekLast()]) {
                 deque.pollLast();
             }
-            while (!deque.isEmpty() && nums[i] > nums[deque.peek()]) {
-                deque.pop();
+            deque.offerLast(i);
+            if (deque.peekFirst() < i - k + 1) {
+                deque.pollFirst();
             }
-            deque.push(i);
             if (i >= k - 1) {
-                ans[j++] = nums[deque.peekLast()];
+                ans[j++] = nums[deque.peekFirst()];
             }
         }
         return ans;
