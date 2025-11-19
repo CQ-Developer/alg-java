@@ -41,13 +41,13 @@ class SolutionA implements Solution {
         Arrays.sort(idx, (i, j) -> nums[j] - nums[i]);
         long ans = 1;
         for (int i : idx) {
-            long tot = (long) (i - left[i]) * (right[i] - i);
-            if (tot >= k) {
+            long total = (long) (i - left[i]) * (right[i] - i);
+            if (total >= k) {
                 ans = ans * pow(nums[i], k) % 1000000007;
                 break;
             }
-            ans = ans * pow(nums[i], (int) tot) % 1000000007;
-            k -= tot;
+            ans = ans * pow(nums[i], (int) total) % 1000000007;
+            k -= total;
         }
         return (int) ans;
     }
@@ -56,9 +56,9 @@ class SolutionA implements Solution {
         long ans = 1;
         for (; n > 0; n /= 2) {
             if ((n & 1) == 1) {
-                ans = (ans * x) % 1000000007;
+                ans = ans * x % 1000000007;
             }
-            x = (x * x) % 1000000007;
+            x = x * x % 1000000007;
         }
         return ans;
     }
