@@ -5,6 +5,7 @@
 ```json
 {
     "redhat.telemetry.enabled": false,
+    "java.saveActions.organizeImports": true,
     "java.dependency.packagePresentation": "hierarchical",
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.project.explorer.showNonJavaResources": false,
