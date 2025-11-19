@@ -4,6 +4,6 @@ import java.util.List;
 
 interface Solution {
 
-    int maximumScore(List<Integer> nums, int k);
+    int maximumScore(List<Integer> _nums, int k);
 
 }
