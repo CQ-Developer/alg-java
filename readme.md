@@ -18,14 +18,14 @@
 
 ```json
 {
-    "name": "alg-java",
+    "name": "alg-java-dev-container",
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
         "ghcr.io/devcontainers/features/java:1": {
-            "version": "21",
+            "version": "25",
             "jdkDistro": "open",
             "installMaven": true,
-            "mavenVersion": "3.9.10"
+            "mavenVersion": "3.9.11"
         },
         "ghcr.io/devcontainers/features/common-utils:2": {
             "upgradlePackages": true,
