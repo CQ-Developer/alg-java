@@ -17,6 +17,10 @@
 ```json
 {
     "remoteUser": "chen",
+    "remoteEnv": {
+        "TZ": "Asia/Shanghai",
+        "Lang": "C.UTF-8"
+    },
     "build": {
         "dockerfile": "Dockerfile"
     },
