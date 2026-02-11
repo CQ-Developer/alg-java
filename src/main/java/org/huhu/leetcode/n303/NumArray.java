@@ -1,0 +1,19 @@
+package org.huhu.leetcode.n303;
+
+class NumArray {
+
+    private final int[] pre;
+
+    public NumArray(int[] nums) {
+        int n = nums.length;
+        pre = new int[n + 1];
+        for (int i = 0; i < n; i++) {
+            pre[i + 1] = pre[i] + nums[i];
+        }
+    }
+
+    public int sumRange(int left, int right) {
+        return pre[right + 1] - pre[left];
+    }
+
+}
