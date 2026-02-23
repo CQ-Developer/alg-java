@@ -11,7 +11,7 @@ class SolutionB implements Solution {
         Map<Integer, Integer> cnt = new HashMap<>();
         cnt.put(0, -1);
         for (int i = 0; i < nums.length; i++) {
-            pre += nums[i] == 1 ? 1 : -1;
+            pre += nums[i] * 2 - 1;
             Integer j = cnt.get(pre);
             if (j != null) {
                 ans = Math.max(ans, i - j);

@@ -11,7 +11,7 @@ class SolutionA implements Solution {
 
         int[] preSum = new int[n + 1];
         for (int i = 0; i < n; i++) {
-            int x = nums[i] == 1 ? 1 : -1;
+            int x = nums[i] * 2 - 1;
             preSum[i + 1] = preSum[i] + x;
         }
 
