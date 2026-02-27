@@ -1,22 +1,22 @@
 package org.huhu.leetcode.n1124;
 
+import java.util.HashMap;
+import java.util.Map;
+
 class SolutionB implements Solution {
 
     @Override
     public int longestWPI(int[] hours) {
-        int n = hours.length, ans = 0, s = 0;
-        int[] pos = new int[n + 2];
-        for (int i = 1; i <= n; i++) {
-            s -= hours[i - 1] > 8 ? 1 : -1;
-            if (s < 0) {
-                ans = i;
+        int p = 0, ans = 0;
+        Map<Integer, Integer> hash = new HashMap<>();
+        hash.put(0, -1);
+        for (int i = 0; i < hours.length; i++) {
+            p += hours[i] > 8 ? 1 : -1;
+            if (p > 0) {
+                ans = i + 1;
             } else {
-                if (pos[s + 1] > 0) {
-                    ans = Math.max(ans, i - pos[s + 1]);
-                }
-                if (pos[s] == 0) {
-                    pos[s] = i;
-                }
+                ans = Math.max(ans, i - hash.getOrDefault(p - 1, i));
+                hash.putIfAbsent(p, i);
             }
         }
         return ans;
