@@ -33,4 +33,11 @@ abstract class TestSolution {
         Assertions.assertThat(solution.minSubarray(nums, 3)).isEqualTo(0);
     }
 
+
+    @Test
+    void test_d() {
+        int[] nums = { 1000000000, 1000000000, 1000000000 };
+        Assertions.assertThat(solution.minSubarray(nums, 3)).isEqualTo(0);
+    }
+
 }
